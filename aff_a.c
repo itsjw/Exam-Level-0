@@ -6,7 +6,7 @@
 /*   By: arangari <arangari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/09/06 14:09:53 by arangari          #+#    #+#             */
-/*   Updated: 2017/09/06 15:25:05 by arangari         ###   ########.fr       */
+/*   Updated: 2017/09/06 15:51:40 by arangari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@ int    main(int ac, char **av)
     i = 0;
     if (ac == 2)
     {
-        if (av[1][i++] == 'a')
-            write(1, "a\n", 2); 
-        else
-            write(1, "\n", 1);
-    }
+        while (av[1][i++] != '\0')
+        {
+            if (av[1][i] == 'a')
+			{
+				write(1, "a", 1); 
+				break;
+			}
+			else
+				i++;
+        }
+  		write(1, "\n", 1);
+	}
     else
         write(1, "a\n", 2);    
     return (0);
